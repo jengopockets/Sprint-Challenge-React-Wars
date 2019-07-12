@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import Person from './CharacterCard';
-
-function List(props) {
+const Listdiv = styled.div`
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+`;
+function List (props) {
+    console.log(props.people)
     return (
-        <div>
+        
+        <Listdiv>
             {props.people.map(person => (
                 <Person person={person} key={person.created} />
             ))}
-        </div>
+        </Listdiv>
     );
 }
 export default List;

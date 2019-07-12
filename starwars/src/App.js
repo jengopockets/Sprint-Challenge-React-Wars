@@ -1,10 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import List from './components/CharacterList';
 import './App.css';
+const Maindiv = styled.div `
+width: 80%;
+height: fit-content;
+padding: 20px;
+padding-bottom: 45px;
+margin: 50px auto;
+border: 10px solid red;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+text-align:center;
+`;
 
 const App = () => {
-  const [characters, setCharacters]=useState('')
+  const [people, setPeople]=useState([])
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -13,15 +26,15 @@ const App = () => {
   // sync up with, if any.
   useEffect(() =>{
     axios
-    .get('http https://swapi.co/api/people/')
-    .then(res => setCharacters(res.characters));
+    .get('https://swapi.co/api/people/')
+    .then(res => setPeople(res.data.results));
   }, []);
-
+console.log(people)
   return (
-    <div className="App">
+    <Maindiv>
       <h1 className="Header">React Wars</h1>
-      
-    </div>
+      <List people = {people}/>
+    </Maindiv>
   );
 }
 
