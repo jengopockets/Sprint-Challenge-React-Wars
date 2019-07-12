@@ -15,7 +15,13 @@ display: flex;
 flex-direction: column;
 text-align:center;
 `;
-
+const Header = styled.h1 `
+color: #443e3e;
+text-shadow: 1px 1px 5px blue;
+text-align: center;
+font-size: 4rem;
+color: red;
+margin: 20px auto;`;
 const App = () => {
   const [people, setPeople]=useState([])
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -32,7 +38,7 @@ const App = () => {
 console.log(people)
   return (
     <Maindiv>
-      <h1 className="Header">React Wars</h1>
+      <Header>React Wars</Header>
       <List people = {people}/>
     </Maindiv>
   );
