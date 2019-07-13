@@ -2,15 +2,29 @@
 
 exports[`<App /> should match snapshot 1`] = `
 <div
-  className="sc-ifAKCX dOVvBb"
+  className="sc-bZQynM kvBvZD"
 >
   <h1
-    className="sc-EHOje kiphWW"
+    className="sc-gzVnrw cnyyff"
   >
     React Wars
   </h1>
   <div
     className="sc-bxivhb jYLQkj"
   />
+  <div
+    className="sc-ifAKCX bmKgXx"
+  >
+    <button
+      className="sc-EHOje dNBAvH"
+    >
+      Next
+    </button>
+    <button
+      className="sc-EHOje dNBAvH"
+    >
+      Previous
+    </button>
+  </div>
 </div>
 `;

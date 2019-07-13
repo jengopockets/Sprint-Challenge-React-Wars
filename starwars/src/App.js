@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import styled from 'styled-components';
 import List from './components/CharacterList';
+import Pagination from './components/Pagination'
 import './App.css';
 const Maindiv = styled.div `
 width: 80%;
@@ -24,6 +24,8 @@ color: red;
 margin: 20px auto;`;
 const App = () => {
   const [people, setPeople]=useState([])
+  const [nextpage, setNextPage]=useState('')
+  const [prevPag, setPrevPage]=useState('')
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -31,15 +33,32 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   useEffect(() =>{
-    axios
-    .get('https://swapi.co/api/people/')
-    .then(res => setPeople(res.data.results));
+  fetch("https://swapi.co/api/people/")
+    .then(res => res.json())
+    .then( apiData => {
+      setPeople(apiData.results);
+      setNextPage(apiData.next);
+      setPrevPage(apiData.prev)
+    })
+    .catch(err => console.log("There was an Error", err))
   }, []);
-console.log(people)
+
+  const fetchCharacters = url => {
+    setPeople({})
+    fetch(url)
+    .then(res => res.json())
+    .then( apiData => {
+      setPeople(apiData.results);
+      setNextPage(api.next);
+      setPrevPage(api.previous);
+        })
+        .catch(err => console.log("Here there be an Error", err))
+  }
   return (
     <Maindiv>
       <Header>React Wars</Header>
-      <List people = {people}/>
+      <List people={people}/>
+      <Pagination />
     </Maindiv>
   );
 }
