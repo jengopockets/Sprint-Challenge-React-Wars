@@ -24,8 +24,8 @@ color: red;
 margin: 20px auto;`;
 const App = () => {
   const [people, setPeople]=useState([])
-  const [nextpage, setNextPage]=useState('')
-  const [prevPag, setPrevPage]=useState('')
+  const [nextPage, setNextPage]=useState('')
+  const [prevPage, setPrevPage]=useState('')
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -44,13 +44,13 @@ const App = () => {
   }, []);
 
   const fetchCharacters = url => {
-    setPeople({})
+    setPeople([])
     fetch(url)
     .then(res => res.json())
     .then( apiData => {
       setPeople(apiData.results);
-      setNextPage(api.next);
-      setPrevPage(api.previous);
+      setNextPage(apiData.next);
+      setPrevPage(apiData.previous);
         })
         .catch(err => console.log("Here there be an Error", err))
   }
@@ -58,7 +58,7 @@ const App = () => {
     <Maindiv>
       <Header>React Wars</Header>
       <List people={people}/>
-      <Pagination />
+      <Pagination fetchCharacters={fetchCharacters} nextPage={nextPage} prevPage={prevPage} />
     </Maindiv>
   );
 }

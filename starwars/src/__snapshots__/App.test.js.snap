@@ -2,10 +2,10 @@
 
 exports[`<App /> should match snapshot 1`] = `
 <div
-  className="sc-bZQynM kvBvZD"
+  className="sc-gzVnrw qXCeh"
 >
   <h1
-    className="sc-gzVnrw cnyyff"
+    className="sc-htoDjs bgIExJ"
   >
     React Wars
   </h1>
@@ -16,14 +16,15 @@ exports[`<App /> should match snapshot 1`] = `
     className="sc-ifAKCX bmKgXx"
   >
     <button
-      className="sc-EHOje dNBAvH"
+      className="sc-bZQynM RVMcM"
     >
-      Next
+      Previous
     </button>
     <button
       className="sc-EHOje dNBAvH"
+      onClick={[Function]}
     >
-      Previous
+      Next
     </button>
   </div>
 </div>
