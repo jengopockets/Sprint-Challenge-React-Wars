@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match snapshot 1`] = `
+<div
+  className="sc-gzVnrw qXCeh"
+>
+  <h1
+    className="sc-htoDjs bgIExJ"
+  >
+    React Wars
+  </h1>
+  <div
+    className="sc-bxivhb jYLQkj"
+  />
+  <div
+    className="sc-ifAKCX bmKgXx"
+  >
+    <button
+      className="sc-bZQynM RVMcM"
+    >
+      Previous
+    </button>
+    <button
+      className="sc-EHOje dNBAvH"
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;
